@@ -14,6 +14,7 @@ async function getPokemon() {
 
   if (!response.ok) {
     test.textContent = "Couldn't fetch pokemon data!";
+    return;
   }
   // Getting poke data
   const data = await response.json();
@@ -27,6 +28,7 @@ async function getPokemon() {
   const pokeResponse = await fetch(pokeApi);
   if (!pokeResponse.ok) {
     console.log("Can't find pokemons API");
+    return;
   }
 
   const pokeData = await pokeResponse.json();
